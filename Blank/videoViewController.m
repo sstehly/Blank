@@ -9,7 +9,6 @@
 #import "videoViewController.h"
 
 @interface videoViewController ()
-@property (weak, nonatomic) IBOutlet UIView *videoView;
 @property (weak, nonatomic) IBOutlet UIView *videoTextView;
 
 @end
@@ -41,8 +40,12 @@
 
 -(void) startAnimate{
     NSLog(@"test");
+    self.videoInfoView.alpha=0;
+    //self.videoInfoView.center=CGPointMake(160, 260);
     
     [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        //self.videoInfoView.alpha=1;
+        //self.videoInfoView.center=CGPointMake(160, 285);
         
         self.videoView.frame = CGRectMake(0, 0, 320,180);
         self.videoTextView.frame = CGRectMake(0, 180, 320,330);
@@ -50,8 +53,20 @@
     } completion:^(BOOL finished) {
 
     }];
+    
+    [UIView animateWithDuration:0.4 delay:.2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.videoInfoView.alpha=1;
+        //self.videoInfoView.center=CGPointMake(160, 285);
+        
+       
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+
 }
 -(void) returnAnimate{
+    self.videoInfoView.alpha=0;
     self.videoView.frame = CGRectMake(10, 10, 300,169);
     self.videoTextView.frame = CGRectMake(9, 180, 300,120);
     

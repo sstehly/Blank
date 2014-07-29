@@ -9,9 +9,13 @@
                 <outlet property="backButtonView" destination="rHV-Hi-tKS" id="qcF-45-Xa8"/>
                 <outlet property="fakeDone" destination="TEH-9T-W4p" id="58v-FO-dHd"/>
                 <outlet property="feedScrollView" destination="6mi-Oz-voc" id="KbK-hE-Czw"/>
+                <outlet property="firstView" destination="2Js-0I-w5z" id="Spr-tK-ade"/>
+                <outlet property="loader" destination="yXd-VT-aTs" id="Lx6-O7-woh"/>
                 <outlet property="menuButton" destination="auy-jx-dec" id="tDt-ET-cP0"/>
                 <outlet property="navBarTitle" destination="1oi-0z-EO3" id="GHX-lw-cnD"/>
                 <outlet property="navBarView" destination="NZM-Kz-8Eh" id="N1k-uc-OJV"/>
+                <outlet property="secondView" destination="mrC-mF-zQM" id="InI-FB-f7J"/>
+                <outlet property="thirdView" destination="Lt2-tM-sIl" id="mYD-RV-ZEO"/>
                 <outlet property="topicHandler" destination="1nK-GU-yND" id="tBf-7n-Edn"/>
                 <outlet property="transparentView" destination="OxE-Rd-7rd" id="BWY-P3-GJO"/>
                 <outlet property="videoView" destination="w7D-hH-Ywo" id="hqg-GJ-ufx"/>
@@ -23,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6mi-Oz-voc">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" id="6mi-Oz-voc">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
@@ -31,7 +35,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y8Q-g8-taF">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y8Q-g8-taF">
                             <rect key="frame" x="12" y="181" width="294" height="86"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal">
@@ -41,7 +45,7 @@
                                 <action selector="fullScreenbutton:" destination="-1" eventType="touchUpInside" id="fSU-Nc-2s4"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ydY-V1-3Um">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ydY-V1-3Um">
                             <rect key="frame" x="12" y="450" width="294" height="99"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal">
@@ -51,7 +55,7 @@
                                 <action selector="fullScreenbutton:" destination="-1" eventType="touchUpInside" id="ADZ-SD-86I"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Viu-Bz-vdu">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Viu-Bz-vdu">
                             <rect key="frame" x="12" y="720" width="294" height="86"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal">
@@ -61,7 +65,7 @@
                                 <action selector="fullScreenbutton:" destination="-1" eventType="touchUpInside" id="luy-if-TgF"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hqh-Ri-nt4">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hqh-Ri-nt4">
                             <rect key="frame" x="12" y="990" width="294" height="86"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal">
@@ -71,7 +75,28 @@
                                 <action selector="fullScreenbutton:" destination="-1" eventType="touchUpInside" id="fbA-jJ-2dC"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" id="2Js-0I-w5z" userLabel="firstView">
+                            <rect key="frame" x="9" y="8" width="301" height="171"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="mrC-mF-zQM" userLabel="secondView">
+                            <rect key="frame" x="9.5" y="278.5" width="301" height="171"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="Lt2-tM-sIl" userLabel="thirdView">
+                            <rect key="frame" x="9.5" y="548.5" width="301" height="171"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" id="sXg-6M-y9B" userLabel="fourthView">
+                            <rect key="frame" x="9" y="816.5" width="301" height="171"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
+                    <gestureRecognizers/>
                 </scrollView>
                 <view contentMode="scaleToFill" id="w7D-hH-Ywo">
                     <rect key="frame" x="520" y="64" width="320" height="504"/>
@@ -116,7 +141,11 @@
                     <rect key="frame" x="320" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <gestureRecognizers/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="m2f-Pf-t1F" appends="YES" id="wfT-AM-KtH"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="1nK-GU-yND">
                     <rect key="frame" x="320" y="0.0" width="320" height="568"/>
@@ -135,11 +164,21 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="yXd-VT-aTs">
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="color" red="1" green="0.37682481750000002" blue="0.27984770949999999" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <tapGestureRecognizer id="m2f-Pf-t1F">
+            <connections>
+                <action selector="fakeDoneClick:" destination="-1" id="rrF-Ac-Bgd"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="ic_chevron_left_wht_24dp" width="24" height="24"/>
